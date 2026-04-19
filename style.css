@@ -1,0 +1,279 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
+
+:root {
+    --blue-deep: #0C2D4B; 
+    --blue-rich: #1A4A6F;    
+    --blue-soft: #2C6285;
+    --blue-light: #4A80A8;
+    --gold-main: #C7A252;      
+    --gold-light: #E2C28B;
+    --gold-subtle: #F3E9CE;
+    --gold-dark: #A67C3A;
+    --cream-bg: #FEFCF7;
+    --white: #FFFFFF;
+    --text-dark: #111827;
+    --text-muted: #6B7280;
+    --border-light: #EAE3D7;
+    --shadow-sm: 0 12px 30px rgba(0, 0, 0, 0.03), 0 4px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 25px 40px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--cream-bg);
+    color: var(--text-dark);
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+/* Container */
+.container {
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* ========== HEADER ========== */
+.header-top {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 253, 248, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+}
+
+.header-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--blue-deep) 0%, var(--gold-main) 100%);
+    border-radius: 14px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/*Замена*/
+.logo-img::after {
+    content: "✨";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+}
+
+.logo-text a {
+    text-decoration: none;
+}
+
+.logo-text h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, var(--blue-deep) 0%, var(--gold-main) 70%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Nav */
+nav ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: var(--blue-deep);
+    transition: all 0.2s;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: var(--gold-main);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dropdown-toggle i {
+    font-size: 12px;
+    transition: transform 0.25s ease;
+}
+
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    min-width: 220px;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+    padding: 10px 0;
+    visibility: hidden;
+    transition: all 0.25s;
+    z-index: 100;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    top: calc(100% + 8px);
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 24px;
+    color: var(--blue-deep);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.dropdown-menu li a:hover {
+    background: linear-gradient(90deg, var(--gold-subtle), transparent);
+    color: var(--gold-dark);
+    padding-left: 28px;
+}
+
+.dropdown-menu li a::after {
+    display: none;
+}
+
+/* ========== HERO SECTION с фоновым изображением ========== */
+.hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+}
+
+.background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    filter: brightness(0.5) contrast(1.05);
+    transition: transform 0.4s ease;
+}
+
+.hero:hover .background-image img {
+    transform: scale(1.02);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #FFF8E7 0%, var(--gold-light) 40%, #FFE8C0 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: none;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.8s ease;
+}
+
+/* ========== Секции общие ========== */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: var(--blue-deep);
+    margin-bottom: 16px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold-main), var(--gold-light));
+    border-radius: 4px;
+}
+
+.section-sub {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 48px;
+    max-width: 650px;
+}
+
