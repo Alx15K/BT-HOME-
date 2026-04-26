@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +23,8 @@
                     <nav>
                         <ul>
                             <li><a href="#about">О компании</a></li>
-                            <li class="dropdown">                                    <a href="#detailed-materials" class="dropdown-toggle">
+                            <li class="dropdown"> 
+                                <a href="#detailed-materials" class="dropdown-toggle">
                                     Каталог <i class="fas fa-chevron-down"></i>
                                 </a>
                                 <ul class="dropdown-menu">
@@ -40,21 +41,130 @@
             </div>
         </header>
 
-        <selection class="hero">
+        <selection class="hero" id="">
             <div class="background">
                 <div class="background-image">
-                    <img src="images/serv.jpeg" alt="NOT FOUND">
+                    <img src="images/servs_2.jpeg" alt="NOT FOUND">
                 </div>
             </div>
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1>Эстетика сервировки</h1>
+                        <h2>ВАШЕ НАСТОРЕНИЕ</h2>
                     </div>
 
                 </div>
             </div>
         </selection>
+        <section class="iform-section" id="">
+            <continer>
+            <div class="container">
+                <div class="section-title">
+                    <h2>О компании</h2>
+                    <p><strong>БТэстетика HOME</strong> - бренд эстетики сервировки и деталей, которые создают атмосферу.</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Наша работа</h3>
+                        <p>Мы создаём кольца для салфеток и аксессуары для стола, в которых сочетаются лаконичный дизайн, аккуратная работа и внимание к мелочам. Каждое изделие - это про ощущение порядка, вкуса и продуманного пространства.</p>
+                        <h3>Наша миссия</h3>
+                        <p>Нам важна не просто функция, а настроение: чтобы обычный ужин выглядел как событие, а сервировка становилась частью стиля дома.</p>
+                        <h3>БТэстетика HOME - когда детали решают.</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="catalog" id="catalog-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Каталог аксессуаров</h2>
+                    <p>Полный ассортимент аксессуаров для вашей идеальной сервировки</p>
+                </div>
+                <!-- Товар 1: Подставка "такса" (секция) -->
+                <div class="full-width-section sand-bg" id="sand-section">
+                    <div class="container">
+                        <div class="section-content">
+                            <div class="section-header">
+                                <h3>ПОДСТАВКИ ПОД НОЖ</h3>
+                                <div class="detailed-product-grid">
+                                    <h2>Подставка "Такса"</h2>
+                                    <p>Элегантная подставка для ножей из сплава с матовым покрытием. Устойчивая, стильная, придаёт столу особый шарм.</p>
+                                    <div class="price-tag">2 490 ₽</div>
+                                    <button class="order-button" onclick="alert('Добавлено в заявку! Свяжемся для оформления.')">Заказать</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 2: Кольца для салфеток -->
+                <div class="full-width-section sand-bg" id="crushed-stone-section">
+                    <div class="container">
+                        <h3>Кольца для салфеток</h3>
+                        <div class="product-showcase">
+                            <div class="product-card">
+                                <div class="product-icon"><i class="fas fa-ring"></i></div>
+                                <h4>Кольцо "Жемчуг"</h4>
+                                <p>Нежное кольцо с перламутровым покрытием, подчеркнёт утончённый вкус.</p>
+                                <div class="price-tag">1 290 ₽</div>
+                                <button class="order-button" onclick="alert('Кольцо Жемчуг добавлено в корзину. Оставьте заявку в разделе Контакты!')">Выбрать</button>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-icon"><i class="fas fa-leaf"></i></div>
+                                <h4>Кольцо "Латунь"</h4>
+                                <p>Лаконичное латунное кольцо с золотистым оттенком.</p>
+                                <div class="price-tag">1 590 ₽</div>
+                                <button class="order-button" onclick="alert('Кольцо Латунь — отличный выбор!')">Заказать</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 3: Наборы для сервировки -->
+                <div class="full-width-section sand-bg" id="Wood-section">
+                    <div class="container">
+                        <h3>Наборы для сервировки "Древесная классика"</h3>
+                        <div class="product-showcase">
+                            <div class="product-card">
+                                <div class="product-icon"><i class="fas fa-utensils"></i></div>
+                                <h4>Набор "Дуб"</h4>
+                                <p>Подставки под горячее, салфетницы и кольца из натурального дуба.</p>
+                                <div class="price-tag">3 990 ₽</div>
+                                <button class="order-button" onclick="alert('Набор Дуб добавлен')">В заявку</button>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-icon"><i class="fas fa-tree"></i></div>
+                                <h4>Набор "Орех"</h4>
+                                <p>Благородное дерево темного оттенка для строгой эстетики.</p>
+                                <div class="price-tag">4 490 ₽</div>
+                                <button class="order-button" onclick="alert('Набор Орех ожидает вас!')">Купить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-company">
+                        <a href="#top"><h1>БТэстетика HOME</h1></a>
+                    </div>
+                     <p>Нам важна не просто функция, а настроение: чтобы обычный ужин выглядел как событие, а сервировка становилась частью стиля дома.</p>
+                    <div class="footer-links">
+                        <h4>Навигация</h4>
+                        <ul>
+                            <li><a href="#about">О компании</a></li>
+                            <li><a href="#detailed-materials">Каталог</a></li>
+                            <li><a href="#contact">Контакты</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2026 БТэстетика HOME. Все права защищены. Эстетика сервировки</p>
+                </div>
+            </div>
+        </footer>
         <script src="" async defer></script>
     </body>
-</html>
