@@ -1,8 +1,7 @@
-// Переменные для слайдера
+
 let currentImages = [];
 let currentIndex = 0;
 
-// Элементы модального окна
 const modal = document.getElementById('modal');
 const modalImg = document.getElementById('modal-img');
 const modalTitle = document.getElementById('modal-title');
@@ -14,19 +13,16 @@ const sliderPrev = document.querySelector('.slider-prev');
 const sliderNext = document.querySelector('.slider-next');
 const modalDots = document.getElementById('modal-dots');
 
-// Обновление фото и точек
 function updateModalImage() {
     if (currentImages.length > 0) {
         modalImg.src = currentImages[currentIndex];
     }
     
-    // Обновляем точки
     const dots = document.querySelectorAll('.dot');
     dots.forEach((dot, idx) => {
         dot.classList.toggle('active', idx === currentIndex);
     });
     
-    // Прячем стрелки если фото мало
     if (sliderPrev && sliderNext) {
         const hide = currentImages.length <= 1;
         sliderPrev.style.display = hide ? 'none' : 'flex';
@@ -34,7 +30,6 @@ function updateModalImage() {
     }
 }
 
-// Создание точек
 function createDots(count) {
     if (!modalDots) return;
     modalDots.innerHTML = '';
@@ -57,15 +52,12 @@ function createDots(count) {
     }
 }
 
-// Открытие модального окна
 function openProductModal(card) {
-    // Собираем данные из карточки
     const title = card.querySelector('h3, h4')?.innerText || 'Товар';
     const desc = card.querySelector('p:not(.color p)')?.innerText || '';
     const price = card.querySelector('.price-tag')?.innerText || '';
     const colorText = card.querySelector('.color')?.innerText || '';
     
-    // Собираем все фото из карточки
     const gallery = card.querySelector('.product-gallery');
     const images = [];
     
@@ -78,17 +70,14 @@ function openProductModal(card) {
         if (singleImg?.src) images.push(singleImg.src);
     }
     
-    // Заглушка если нет фото
     if (images.length === 0) images.push('images/product-dachshund.jpg');
     
-    // Заполняем модалку
     modalTitle.innerText = title;
     modalDesc.innerText = desc;
     modalPrice.innerText = price;
     modalColor.innerText = colorText;
     modalColor.style.display = colorText ? 'block' : 'none';
     
-    // Запускаем слайдер
     currentImages = images;
     currentIndex = 0;
     createDots(images.length);
@@ -97,7 +86,6 @@ function openProductModal(card) {
     modal.style.display = 'block';
 }
 
-// Стрелки
 sliderPrev?.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
     updateModalImage();
@@ -108,20 +96,16 @@ sliderNext?.addEventListener('click', () => {
     updateModalImage();
 });
 
-// Клик по карточкам
 document.querySelectorAll('.product-card').forEach(card => {
     card.addEventListener('click', (e) => {
-        // Не открывать при клике на кнопку
         if (e.target.classList.contains('order-button') || 
             e.target.closest('.order-button')) return;
         openProductModal(card);
     });
 });
 
-// Закрытие модалки
 window.addEventListener('click', (e) => {
     if (e.target === modal) modal.style.display = 'none';
 });
 
-// Обработка ошибки загрузки фото
 modalImg.onerror = () => modalImg.src = 'images/product-dachshund.jpg';

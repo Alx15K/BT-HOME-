@@ -28,13 +28,13 @@
                                     Каталог <i class="fas fa-chevron-down"></i>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#sand-section">Товар 1</a></li>
-                                    <li><a href="#crushed-stone-section">Товар 2</a></li>
-                                    <li><a href="#Wood-section">Товар 3</a></li>
+                                    <li><a href="#sand-section">Порт-куто</a></li>
+                                    <li><a href="#crushed-stone-section">Кольца для салфеток</a></li>
+                                    <li><a href="#Wood-section">Наборы</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#contact">Контакты</a></li>
                             <li><a href="#order-form">Оставить заявку</a></li>
+                            <li><a href="#contact">Контакты</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -529,6 +529,60 @@
                 </div>
             </div>
         </section>
+        <section id="order-form" class="section order-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Оставить заявку</h2>
+            <h3>Ваш заказ — наша забота!</h3>  
+        </div>
+        
+        <form class="form" method="post" action="/send.php">
+            <div class="form__item">
+                <input class="form__input" type="text" name="name" required>
+                    <label class="form__label">Ваше имя</label>
+            </div>
+            <div class="form__item">
+                <input class="form__input" type="text" name="phone" required>
+                <label class="form__label">Номер телефона</label>
+            </div>
+
+            <div class="form__item">
+                <select class="form__input" name="material">
+                    <option value="">Выберите продукт</option>
+                    <option value="Набор Порт-куто «Такса»">Набор Порт-куто «Такса»</option>
+                    <option value="Набор Порт-куто «Кошка»">Набор Порт-куто «Кошка»</option>
+                    <option value="Набор Порт-куто «Олень»">Набор Порт-куто «Олень»</option>
+                    <option value="Набор Колец">Набор Колец</option>
+                    <option value="Набор с Таксой">Набор с Таксой</option>
+                    <option value="Набор с Кошкой">Набор с Кошкой</option>
+                    <option value="Набор с Оленем">Набор с Оленем</option>
+                </select>
+                <label class="form__label">Продукт</label>
+            </div>
+
+            <div class="form__item">
+                <select class="form__input" name="color">
+                     <option value="">Выберите цвет</option>
+                      <option value="Серебро">Серебро</option>
+                      <option value="Золото">Золото</option>
+                </select>
+                <label class="form__label">Цвет</label>
+            </div>
+
+            <div class="form__item">
+                <select class="form__input" name="count">
+                     <option value="">Выберите количество</option>
+                      <option value="6 шт.">6 шт.</option>
+                      <option value="12 шт.">12 шт.</option>
+                </select>
+                <label class="form__label">Количество</label>
+            </div>
+
+            <input class="form__input btn" type="submit" value="Отправить">
+            <input type="hidden" name="act" value="order">
+        </form>
+    </div>
+</section>
         <footer>
             <div class="container">
                 <div class="footer-content">
