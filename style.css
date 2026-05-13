@@ -139,33 +139,39 @@ nav ul li a:hover::after {
     cursor: pointer;
 }
 
+.dropdown-toggle i {
+    transition: transform 0.2s ease;
+}
+
 .dropdown:hover .dropdown-toggle i {
     transform: rotate(180deg);
 }
 
 .dropdown-menu {
     position: absolute;
-    top: calc(100% + 12px);
-    left: auto;
-    right: auto; 
-    min-width: 100px;
+    top: 100%;
+    left: 0;
+    right: auto;
+    min-width: 220px;
     background: var(--white);
     border-radius: 16px;
     box-shadow: var(--shadow-md);
     border: 1px solid var(--border-light);
-    padding: 10px 0;
+    padding: 12px 0;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.25s ease;
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.2s ease;
     z-index: 1000;
     list-style: none;
     margin: 0;
 }
 
+/* При наведении показываем меню ВНИЗ (без смещения в сторону) */
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    top: calc(100% + 8px);
+    transform: translateY(0);
 }
 
 .dropdown-menu li {

