@@ -109,3 +109,26 @@ window.addEventListener('click', (e) => {
 });
 
 modalImg.onerror = () => modalImg.src = 'images/product-dachshund.jpg';
+
+(function initMobileNav() {
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (!toggle || !nav) return;
+
+    function setOpen(open) {
+        nav.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Закрыть меню' : 'Меню');
+        document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    toggle.addEventListener('click', () => setOpen(!nav.classList.contains('nav-open')));
+
+    nav.querySelectorAll('a').forEach((a) => {
+        a.addEventListener('click', () => setOpen(false));
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 900) setOpen(false);
+    });
+})();

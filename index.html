@@ -9,34 +9,44 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header>
-            <div class="header-top">
-                <div class="container">
-                    <div class="logo">
-                        <div class="logo-img">
-                            <img src="#?" alt="">
-                        </div>
-                        <div class="logo-text">
-                            <a href="#top"><h1>БТэстетика HOME</h1></a>
-                        </div>
+        <header class="site-header">
+            <div class="container site-header-bar">
+                <div class="logo">
+                    <div class="logo-img">
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 50,15 Q 50,50 85,50 Q 50,50 50,85 Q 50,50 15,50 Q 50,50 50,15 Z" 
+                                  fill="#C7A252" 
+                                  stroke="#C7A252" 
+                                  stroke-width="3" 
+                                  stroke-linejoin="round" 
+                                  stroke-linecap="round"/>
+                        </svg>
                     </div>
-                    <nav>
-                        <ul>
-                            <li><a href="#inform">О компании</a></li>
-                            <li class="dropdown"> 
-                                <a href="#detailed-materials" class="dropdown-toggle">
-                                    Каталог <i class="fas fa-chevron-down"></i>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#sand-section">Порт-куто</a></li>
-                                    <li><a href="#crushed-stone-section">Кольца для салфеток</a></li>
-                                    <li><a href="#Wood-section">Наборы</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#order-form">Оставить заявку</a></li>
-                        </ul>
-                    </nav>
+                    <div class="logo-text">
+                        <a href="#top"><h1>БТэстетика HOME</h1></a>
+                    </div>
                 </div>
+                <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Меню">
+                    <span class="menu-toggle-bar"></span>
+                    <span class="menu-toggle-bar"></span>
+                    <span class="menu-toggle-bar"></span>
+                </button>
+                <nav id="site-nav" class="site-nav" aria-label="Основное меню">
+                <ul>
+                    <li><a href="#inform">О компании</a></li>
+                    <li class="dropdown"> 
+                        <a href="#detailed-materials" class="dropdown-toggle">
+                            Каталог <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#sand-section">Порт-куто</a></li>
+                            <li><a href="#crushed-stone-section">Кольца для салфеток</a></li>
+                            <li><a href="#Wood-section">Наборы</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#order-form">Оставить заявку</a></li>
+                </ul>
+                </nav>
             </div>
         </header>
 
@@ -594,7 +604,6 @@
                         <ul>
                             <li><a href="#about">О компании</a></li>
                             <li><a href="#detailed-materials">Каталог</a></li>
-                            <li><a href="#contact">Контакты</a></li>
                         </ul>
                     </div>
                 </div>
